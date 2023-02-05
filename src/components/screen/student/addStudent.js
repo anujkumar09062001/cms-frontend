@@ -101,7 +101,7 @@ const AddStudent = () => {
         .then((res) => {
           message.success("Student Updated successfully");
           formRef.current.resetFields();
-          navigate("/student");
+          navigate("/student/");
         })
         .catch((err) => {
           message.error("Failed to update student");
