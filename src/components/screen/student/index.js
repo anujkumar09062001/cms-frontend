@@ -90,7 +90,7 @@ const Student = () => {
 
   const onDelete = (id) => {
     axios
-      .delete(`student/${id}/`)
+      .delete(`student/${id}`)
       .then((res) => {
         message.success("Student deleted successfully");
         fetchStudent();

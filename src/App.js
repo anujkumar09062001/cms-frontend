@@ -20,29 +20,29 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/login/" element={<Login />} />
+        <Route exact path="/login" element={<Login />} />
         <Route element={<LayoutComponent />}>
           <Route exact path="/" element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           } />
-          <Route exact path="/department/" element={<ProtectedRoute>
+          <Route exact path="/department" element={<ProtectedRoute>
             <Department />
           </ProtectedRoute>} />
-          <Route exact path="/degree/" element={<ProtectedRoute>
+          <Route exact path="/degree" element={<ProtectedRoute>
             <Degree />
           </ProtectedRoute>} />
-          <Route exact path="/hostel/" element={<ProtectedRoute>
+          <Route exact path="/hostel" element={<ProtectedRoute>
             <Hostel />
           </ProtectedRoute>} />
-          <Route exact path="/student/" element={<ProtectedRoute>
+          <Route exact path="/student" element={<ProtectedRoute>
             <Student />
           </ProtectedRoute>} />
-          <Route exact path="/addStudent/" element={<ProtectedRoute>
+          <Route exact path="/addStudent" element={<ProtectedRoute>
             <AddStudent />
           </ProtectedRoute>} />
-          <Route exact path="/addStudent/:studentId/" element={<ProtectedRoute>
+          <Route exact path="/addStudent/:studentId" element={<ProtectedRoute>
             <AddStudent />
           </ProtectedRoute>} />
         </Route>
