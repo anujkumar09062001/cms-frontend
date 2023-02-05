@@ -4,7 +4,7 @@ import auth from "./services/authService";
 const ProtectedRoute = ({ children }) => {
   const token = auth.getAuthToken();
   if (!token) return (
-    <Navigate to='/login' replace />
+    <Navigate to='/login/' replace />
   )
   return children;
 }
