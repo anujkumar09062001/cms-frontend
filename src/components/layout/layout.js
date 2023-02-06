@@ -89,6 +89,7 @@ const LayoutComponent = ({ user }) => {
 
 
   useEffect(() => {
+    if (window.innerWidth < 700) setCollapsed(true);
     window.addEventListener('resize', handleResponse)
   }, [])
 
