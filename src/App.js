@@ -17,8 +17,8 @@ import auth from "./components/services/authService";
 import { useEffect, useState } from "react";
 import NotFound from "./components/screen/404";
 
-axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
-// axios.defaults.baseURL = `https://novaxylo.pythonanywhere.com/apiV1/`;
+// axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
+axios.defaults.baseURL = `https://novaxylo.pythonanywhere.com/apiV1/`;
 
 const token = auth.getAuthToken();
 
