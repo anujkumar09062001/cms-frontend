@@ -15,7 +15,8 @@ import ProtectedRoute from "./components/protectedRoute";
 import auth from "./components/services/authService";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
+// axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
+axios.defaults.baseURL = `http://novaxylo.pythonanywhere.com/apiV1/`;
 
 function App() {
   const [user, setUser] = useState();
