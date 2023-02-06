@@ -12,16 +12,29 @@ import "./App.css";
 import './components/css/style.scss'
 import Login from "./components/screen/login";
 import ProtectedRoute from "./components/protectedRoute";
+import auth from "./components/services/authService";
+import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = `https://novaxylo.pythonanywhere.com/apiV1/`;
+axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
 
 function App() {
+  const [user, setUser] = useState();
+  const handleUser = async () => {
+    const user = await auth.getCurrentUser();
+    setUser(user)
+  }
+  useEffect(() => {
+    const token = auth.getAuthToken();
+    if (token) {
+      handleUser()
+    }
+  }, [])
 
   return (
     <Router>
       <Routes>
         <Route exact path="/login" element={<Login />} />
-        <Route element={<LayoutComponent />}>
+        <Route element={<LayoutComponent user={user} />}>
           <Route exact path="/" element={
             <ProtectedRoute>
               <Dashboard />

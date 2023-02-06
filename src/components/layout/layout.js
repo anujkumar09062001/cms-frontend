@@ -58,9 +58,8 @@ const items = [
     <UserOutlined />
   ),
 ];
-const LayoutComponent = (props) => {
+const LayoutComponent = ({ user }) => {
   const [collapsed, setCollapsed] = useState(false);
-  const [user, setUser] = useState();
   const [logo, setLogo] = useState(true);
   const {
     token: { colorBgContainer },
@@ -88,14 +87,9 @@ const LayoutComponent = (props) => {
     }
   }
 
-  const handleUser = async () => {
-    const user = await auth.getCurrentUser();
-    setUser(user)
-  }
 
   useEffect(() => {
     window.addEventListener('resize', handleResponse)
-    handleUser()
   }, [])
 
   const styles = {
@@ -150,7 +144,7 @@ const LayoutComponent = (props) => {
           className="mb-4"
         >
           <div className="text-end me-5">
-            <span className="me-4">{user?.name}</span>
+            <span className="me-4 fw-bold text-primary">{user?.name}</span>
             <button className="btn btn-primary btn-sm" onClick={handleLogout}>
               Logout
             </button>
@@ -176,7 +170,7 @@ const LayoutComponent = (props) => {
             textAlign: "center",
           }}
         >
-          Created by Anuj Kumar
+          <span className="fw-bolder">Created by Anuj Kumar</span>
         </Footer>
       </Layout>
     </Layout>
