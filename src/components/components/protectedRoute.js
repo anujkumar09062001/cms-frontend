@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import auth from "./services/authService";
+import auth from "../services/authService";
 
 const ProtectedRoute = ({ children }) => {
   const token = auth.getAuthToken();

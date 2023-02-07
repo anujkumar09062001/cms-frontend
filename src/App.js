@@ -12,7 +12,7 @@ import "./App.css";
 import './components/css/style.scss'
 import "font-awesome/css/font-awesome.css"
 import Login from "./components/screen/login";
-import ProtectedRoute from "./components/protectedRoute";
+import ProtectedRoute from "./components/components/protectedRoute";
 import auth from "./components/services/authService";
 import { useEffect, useState } from "react";
 import NotFound from "./components/screen/404";
