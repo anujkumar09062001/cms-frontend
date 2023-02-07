@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Form, Select, Input, Row, Col, Button, message } from "antd";
 import axios from "axios";
-import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
 
 const { Option } = Select;
@@ -61,8 +60,6 @@ const AddStudent = () => {
           fetchHostel({ type: "married" });
           formRef.current.setFieldsValue({ hostel_type: "Married" });
         }
-        console.log(res.data.date_of_birth);
-        console.log(moment(res.data.date_of_birth));
         formRef.current.setFieldsValue({
           name: res.data.name,
           degree: res.data.degree,
