@@ -17,10 +17,12 @@ import auth from "./components/services/authService";
 import { useEffect, useState } from "react";
 import NotFound from "./components/screen/404";
 
+const token = auth.getAuthToken();
+
 // axios.defaults.baseURL = `http://localhost:8000/apiV1/`;
 axios.defaults.baseURL = `https://novaxylo.pythonanywhere.com/apiV1/`;
+axios.defaults.headers.common.Authorization = `JWT ${token}`
 
-const token = auth.getAuthToken();
 
 function App() {
   const [user, setUser] = useState();
