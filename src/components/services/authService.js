@@ -1,22 +1,17 @@
 import axios from "axios";
-import http from "./httpService";
 
-http.setJwt(getJwt());
+axios.defaults.headers.common.Authorization = `JWT ${getAuthToken()}`
 
 const getCurrentUser = async () => {
   const response = await axios.get('current_user/')
   return response.data;
 }
 
-const getAuthToken = () => {
-  return localStorage.getItem('token');
-}
-
 const setAuthToken = (token) => {
-  return localStorage.setItem('token', token);
+  localStorage.setItem('token', token);
 }
 
-function getJwt() {
+function getAuthToken() {
   return localStorage.getItem('token');
 }
 
