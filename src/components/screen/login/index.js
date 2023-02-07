@@ -22,15 +22,17 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row mt-5">
-        <div className="col-lg-3"></div>
+    <div className="" style={{ height: "100vh" }}>
+      <div className="d-flex h-100 justify-content-center align-items-center">
         <div
-          className="col-lg-6 pt-4 px-4 pb-2"
-          style={{ backgroundColor: "#fff", borderRadius: 15 }}
+          className="p-4 pb-2 rounded"
+          style={{
+            backgroundColor: "#fff",
+            width: "30%",
+          }}
         >
           <div
-            className="mb-5 fw-bold text-center text-primary"
+            className="mb-4 fw-bold text-center text-primary"
             style={{ fontSize: 26 }}
           >
             Login
@@ -51,18 +53,17 @@ const Login = () => {
               >
                 <Input type="password" placeholder="Enter password" />
               </Form.Item>
-              <Form.Item>
+              <Form.Item className="text-center">
                 <Button type="primary" htmlType="submit">
                   Submit
                 </Button>
               </Form.Item>
             </Form>
           </div>
-          <div className="text-center fw-bolder mt-2" style={{ fontSize: 12 }}>
+          <div className="text-center fw-bolder" style={{ fontSize: 12 }}>
             Created by Anuj kumar
           </div>
         </div>
-        <div className="col-lg-3"></div>
       </div>
     </div>
   );

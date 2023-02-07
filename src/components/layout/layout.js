@@ -145,7 +145,7 @@ const LayoutComponent = ({ user }) => {
           className="mb-4"
         >
           <div className="text-end me-5">
-            <span className="me-4 fw-bold text-primary">{user?.name}</span>
+            <span className="me-4 fw-bold text-primary">{user?.username}</span>
             <button className="btn btn-primary btn-sm" onClick={handleLogout}>
               Logout
             </button>
