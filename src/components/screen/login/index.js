@@ -44,14 +44,14 @@ const Login = () => {
                 name="username"
                 rules={[{ required: true, message: "Please enter username" }]}
               >
-                <Input placeholder="Enter username" />
+                <Input placeholder="admin" />
               </Form.Item>
               <Form.Item
                 label="Password"
                 name="password"
                 rules={[{ required: true, message: "Please enter password" }]}
               >
-                <Input type="password" placeholder="Enter password" />
+                <Input type="password" placeholder="admin" />
               </Form.Item>
               <Form.Item className="text-center">
                 <Button type="primary" htmlType="submit">
