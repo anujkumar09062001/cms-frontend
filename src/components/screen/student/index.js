@@ -26,6 +26,7 @@ const Student = () => {
   const [degreeList, setDegreeList] = useState([]);
   const [departmentList, setDepartmentList] = useState([]);
   const [hostelList, setHostelList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchDegree = () => {
     axios
@@ -64,6 +65,7 @@ const Student = () => {
       .then((res) => {
         console.log(res.data);
         setStudentList(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err, "error student");
@@ -71,6 +73,7 @@ const Student = () => {
   };
 
   const onSearchSubmit = () => {
+    setLoading(true);
     var uv = searchRef.current.getFieldsValue();
     console.log(uv);
     fetchStudent({
@@ -270,6 +273,7 @@ const Student = () => {
           dataSource={studentList}
           pagination={false}
           rowKey="id"
+          loading={loading}
           scroll={{ x: 'max-content' }}
         />
       </div>

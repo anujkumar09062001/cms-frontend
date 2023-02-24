@@ -24,6 +24,7 @@ const Hostel = () => {
   const [typeId, setTypeId] = useState("");
   const [visible, setVisible] = useState(false);
   const [editId, setEditId] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const searchRef = useRef();
   const formRef = useRef();
@@ -35,6 +36,7 @@ const Hostel = () => {
       .then((res) => {
         setHostel(res.data);
         searchRef.current.resetFields();
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err, "error");
@@ -44,6 +46,7 @@ const Hostel = () => {
   useEffect(() => { }, []);
 
   const onSearchSubmit = () => {
+    setLoading(true);
     var uv = searchRef.current.getFieldsValue();
     fetchHostel({ type: uv.type }, uv.type);
   };
@@ -230,6 +233,7 @@ const Hostel = () => {
           dataSource={hostel}
           pagination={false}
           rowKey="id"
+          loading={loading}
           scroll={{ x: 'max-content' }}
         />
       </div>
