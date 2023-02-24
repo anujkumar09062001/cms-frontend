@@ -25,13 +25,16 @@ const Login = () => {
   };
 
   return (
-    <div className="" style={{ height: "100vh" }}>
-      <div className="d-flex h-100 justify-content-center align-items-center">
+    <div class="container">
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
         <div
           className="p-4 pb-2 rounded"
           style={{
             backgroundColor: "#fff",
-            width: "30%",
+            width: 400,
           }}
         >
           <div
