@@ -270,6 +270,7 @@ const Student = () => {
           dataSource={studentList}
           pagination={false}
           rowKey="id"
+          scroll={{ x: 'max-content' }}
         />
       </div>
     </div>

@@ -230,6 +230,7 @@ const Hostel = () => {
           dataSource={hostel}
           pagination={false}
           rowKey="id"
+          scroll={{ x: 'max-content' }}
         />
       </div>
       <Drawer

@@ -231,6 +231,7 @@ const Department = () => {
           pagination={false}
           rowKey="id"
           loading={loading}
+          scroll={{ x: 'max-content' }}
         />
       </div>
       <Drawer
