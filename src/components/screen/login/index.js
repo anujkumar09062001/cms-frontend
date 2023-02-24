@@ -1,13 +1,15 @@
 import { Button, Form, Input, message } from "antd";
 import axios from "axios";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import auth from "../../services/authService";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   const formRef = useRef();
 
   const handleSubmit = async () => {
+    setLoading(true);
     const uv = formRef.current.getFieldsValue();
     await axios
       .post("token-auth/", uv)
@@ -17,6 +19,7 @@ const Login = () => {
         message.success("Logged In successfully");
       })
       .catch((err) => {
+        setLoading(false);
         message.error("Invalid Credentials");
       });
   };
@@ -54,7 +57,7 @@ const Login = () => {
                 <Input type="password" placeholder="admin" />
               </Form.Item>
               <Form.Item className="text-center">
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" htmlType="submit" loading={loading}>
                   Submit
                 </Button>
               </Form.Item>
