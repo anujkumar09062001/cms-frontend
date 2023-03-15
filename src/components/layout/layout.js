@@ -135,7 +135,7 @@ const LayoutComponent = ({ children }) => {
           className="m-3 text-center"
           style={{ color: "white", display: "block" }}
         >
-          {logo ? <div style={{ fontSize: 16 }}>IIT Roorkee</div> : ""}
+          {logo ? <div className="fw-bold" style={{ fontSize: 16 }}>AK CMS</div> : ""}
         </div>
         <Menu
           theme="dark"

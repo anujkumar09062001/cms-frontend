@@ -38,22 +38,26 @@ const Login = () => {
           }}
         >
           <div
-            className="mb-4 fw-bold text-center text-primary"
-            style={{ fontSize: 26 }}
+            className="mb-4 fw-bold text-primary text-center"
           >
-            Login
+            AK COLLEGE MANAGEMENT SYSTEM
+          </div>
+          <div
+            className="mb-3 fw-bold"
+          >
+            PLEASE LOG IN
           </div>
           <div className="">
             <Form ref={formRef} layout="vertical" onFinish={handleSubmit}>
               <Form.Item
-                label="Username"
+                label="Username(admin)"
                 name="username"
                 rules={[{ required: true, message: "Please enter username" }]}
               >
                 <Input placeholder="admin" />
               </Form.Item>
               <Form.Item
-                label="Password"
+                label="Password(admin)"
                 name="password"
                 rules={[{ required: true, message: "Please enter password" }]}
               >
