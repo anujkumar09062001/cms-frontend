@@ -58,9 +58,11 @@ const items = [
     <UserOutlined />
   ),
 ];
-const LayoutComponent = ({ user }) => {
+const LayoutComponent = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [logo, setLogo] = useState(true);
+  const [user, setUser] = useState();
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -89,9 +91,17 @@ const LayoutComponent = ({ user }) => {
 
 
   useEffect(() => {
+    const token = auth.getAuthToken(); if (token) {
+      handleUser()
+    }
     if (window.innerWidth < 700) setCollapsed(true);
     window.addEventListener('resize', handleResponse)
   }, [])
+
+  const handleUser = async () => {
+    const user = await auth.getCurrentUser();
+    setUser(user)
+  }
 
   const styles = {
     container1: {
@@ -163,7 +173,8 @@ const LayoutComponent = ({ user }) => {
               background: colorBgContainer,
             }}
           >
-            <Outlet />
+            {/* <Outlet /> */}
+            {children}
           </div>
         </Content>
         <Footer

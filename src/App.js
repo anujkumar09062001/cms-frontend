@@ -31,7 +31,6 @@ function App() {
     setUser(user)
   }
   useEffect(() => {
-    const token = auth.getAuthToken();
     if (token) {
       handleUser()
     }
@@ -41,30 +40,42 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/login" element={token ? <Navigate to="/" /> : <Login />} />
-        <Route element={<LayoutComponent user={user} />}>
+        <Route element={<ProtectedRoute />}>
           <Route exact path="/" element={
-            <ProtectedRoute>
+            <LayoutComponent>
               <Dashboard />
-            </ProtectedRoute>
+            </LayoutComponent>
           } />
-          <Route exact path="/department" element={<ProtectedRoute>
-            <Department />
-          </ProtectedRoute>} />
-          <Route exact path="/degree" element={<ProtectedRoute>
-            <Degree />
-          </ProtectedRoute>} />
-          <Route exact path="/hostel" element={<ProtectedRoute>
-            <Hostel />
-          </ProtectedRoute>} />
-          <Route exact path="/student" element={<ProtectedRoute>
-            <Student />
-          </ProtectedRoute>} />
-          <Route exact path="/addStudent" element={<ProtectedRoute>
-            <AddStudent />
-          </ProtectedRoute>} />
-          <Route exact path="/addStudent/:studentId" element={<ProtectedRoute>
-            <AddStudent />
-          </ProtectedRoute>} />
+          <Route exact path="/department" element={
+            <LayoutComponent>
+              <Department />
+            </LayoutComponent>
+          } />
+          <Route exact path="/degree" element={
+            <LayoutComponent>
+              <Degree />
+            </LayoutComponent>
+          } />
+          <Route exact path="/hostel" element={
+            <LayoutComponent>
+              <Hostel />
+            </LayoutComponent>
+          } />
+          <Route exact path="/student" element={
+            <LayoutComponent>
+              <Student />
+            </LayoutComponent>
+          } />
+          <Route exact path="/addStudent" element={
+            <LayoutComponent>
+              <AddStudent />
+            </LayoutComponent>
+          } />
+          <Route exact path="/addStudent/:studentId" element={
+            <LayoutComponent>
+              <AddStudent />
+            </LayoutComponent>
+          } />
         </Route>
         <Route exact path="/*" element={<NotFound />} />
       </Routes>

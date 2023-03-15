@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ height: "100vh" }}
