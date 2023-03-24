@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import auth from "../services/authService";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -23,7 +23,7 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem(
-    <Link to="" className="text-decoration-none">
+    <Link to="/" className="text-decoration-none">
       Dashboard
     </Link>,
     "1",
@@ -173,7 +173,6 @@ const LayoutComponent = ({ children }) => {
               background: colorBgContainer,
             }}
           >
-            {/* <Outlet /> */}
             {children}
           </div>
         </Content>
