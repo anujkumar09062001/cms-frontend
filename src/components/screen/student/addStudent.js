@@ -80,7 +80,7 @@ const AddStudent = () => {
     if (id.studentId) {
       fetchStudent();
     }
-  }, []);
+  });
 
   const onSubmit = () => {
     var uv = formRef.current.getFieldsValue();

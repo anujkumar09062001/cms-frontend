@@ -63,7 +63,6 @@ const Student = () => {
     axios
       .get(`student/`, { params: { ...params } })
       .then((res) => {
-        console.log(res.data);
         setStudentList(res.data);
         setLoading(false);
       })
@@ -75,7 +74,6 @@ const Student = () => {
   const onSearchSubmit = () => {
     setLoading(true);
     var uv = searchRef.current.getFieldsValue();
-    console.log(uv);
     fetchStudent({
       degree: uv.degree,
       department: uv.department,

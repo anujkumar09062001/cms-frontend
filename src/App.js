@@ -14,7 +14,6 @@ import "font-awesome/css/font-awesome.css"
 import Login from "./components/screen/login";
 import ProtectedRoute from "./components/components/protectedRoute";
 import auth from "./components/services/authService";
-import { useEffect, useState } from "react";
 import NotFound from "./components/screen/404";
 
 const token = auth.getAuthToken();
@@ -25,16 +24,6 @@ axios.defaults.headers.common.Authorization = `JWT ${token}`
 
 
 function App() {
-  const [user, setUser] = useState();
-  const handleUser = async () => {
-    const user = await auth.getCurrentUser();
-    setUser(user)
-  }
-  useEffect(() => {
-    if (token) {
-      handleUser()
-    }
-  }, [])
 
   return (
     <Router>
