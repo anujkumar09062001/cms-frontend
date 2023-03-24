@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../services/authService";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -89,8 +89,9 @@ const LayoutComponent = ({ children }) => {
     }
   }
 
-
+  const navigate = useNavigate();
   useEffect(() => {
+    navigate('/');
     const token = auth.getAuthToken(); if (token) {
       handleUser()
     }
